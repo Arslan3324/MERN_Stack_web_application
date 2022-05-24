@@ -1,5 +1,5 @@
 const multer = require('multer');  
-const user_data = require('../model/userdata') 
+const user_data = require('../models/userData') 
 
 
 //uploading image
@@ -21,14 +21,19 @@ const upload = multer({
 }).single("image");
 
 const insertData = async(req,res)=>{
-    const {name,email,password} = req.body
+    const {name,email,number,country,state,city,address,zipcode} = req.body
     const image = req.file.filename
  
 
     const user = new user_data({
         name:name,
         email:email,
-        password:password,
+        number:number,
+        country:country,
+        state:state,
+        city:city,
+        address:address,
+        zipcode:zipcode,
         image:image
     })
     user.save((err)=>{
@@ -91,14 +96,19 @@ const view_by_id  = async(req,res)=>{
 
 const update_by_id = async (req,res)=>{
     const {id} = req.params
-    const {name,email,password} = req.body
+    const {name,email,number,country,state,city,address,zipcode} = req.body
     const image = req.file.filename
 
     await user_data.findByIdAndUpdate(id,{
         $set:{
             name:name,
             email:email,
-            password:password,
+            number:number,
+            country:country,
+            state:state,
+            city:city,
+            address:address,
+            zipcode:zipcode,
             image:image,
         }
     })

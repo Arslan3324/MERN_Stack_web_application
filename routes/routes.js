@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router();
-const {login_call,signup_call,home_call,search_call,insertData,upload,delete_by_id,view_by_id,update_by_id,to_print} = require('../controller/controller')
+const {login_call,signup_call,home_call,search_call,insertData,upload,delete_by_id,view_by_id,update_by_id,to_print} = require('../controllers/controller')
 
-router.get('/',login_call)
+router.get('/',signup_call)
 router.get('/register',signup_call)
 router.get('/home',home_call)
 router.get('/search',search_call)

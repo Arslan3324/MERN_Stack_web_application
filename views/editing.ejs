@@ -1,0 +1,53 @@
+<%- include('header') -%>
+
+<div class="text-center center" style="margin-top: 50px;"><h2>Edit</h2></div>
+<p></p>
+e
+ 
+<div class="container w-25 border py-5 text-center">
+    <form action="/update/<%= users._id %>" method="post" enctype="multipart/form-data">
+        
+        <div class="mb-3 ">
+            <!-- <label for="email1" class="form-label">Email</label> -->
+            <input type="file" name="image" />
+        </div>
+        <div class="mb-3 ">
+            <!-- <label for="email1" class="form-label">Email</label> -->
+            <input class="form-control" type="text" name="name" id="email1" placeholder="Name" value="<%= users.name %>"/>
+        </div>
+        <div class="mb-3 ">
+            <!-- <label for="email1" class="form-label">Email</label> -->
+            <input class="form-control" type="email" name="email" id="email1" placeholder="Email" value="<%= users.email %>"/>
+        </div>
+        <div class="mb-3">
+            <!-- <label for="password1" class="form-label">password</label> -->
+            <input class="form-control" type="number" name="number" id="number1" placeholder="Number" value="<%= users.number %>" />
+        </div>
+        <div class="mb-3">
+            <!-- <label for="password1" class="form-label">password</label> -->
+            <input class="form-control" type="country" name="country" id="country1" placeholder="country" value="<%= users.country %>" />
+        </div>
+        <div class="mb-3">
+            <!-- <label for="password1" class="form-label">password</label> -->
+            <input class="form-control" type="text" name="state" id="state1" placeholder="State" value="<%= users.state %>" />
+        </div>
+        <div class="mb-3">
+            <!-- <label for="password1" class="form-label">password</label> -->
+            <input class="form-control" type="text" name="city" id="state1" placeholder="City" value="<%= users.city %>" />
+        </div>
+        <div class="mb-3">
+            <!-- <label for="password1" class="form-label">password</label> -->
+            <input class="form-control" type="text" name="zipcode" id="state1" placeholder="ZipCode" value="<%= users.zipcode %>" />
+        </div>
+        <div class="mb-3">
+            <!-- <label for="password1" class="form-label">password</label> -->
+            <input class="form-control" type="text" name="address" id="state1" placeholder="Address" value="<%= users.address %>" />
+        </div>       
+         <div class="mb-3">
+            <button class="btn btn-secondary" type="submit">Update user</button>
+
+        </div>
+    </form>
+</div>
+
+<%- include('footer') -%>
